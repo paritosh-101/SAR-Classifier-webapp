@@ -1,0 +1,7 @@
+FROM python:3.8
+COPY . /project
+EXPOSE 5000
+WORKDIR /project
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt --ignore-installed six
+CMD ["python","app.py"]
